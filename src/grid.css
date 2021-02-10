@@ -1,0 +1,127 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
+  a[href="#top"] {
+    margin: 1rem;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 50vh;
+    text-align: center;
+  }
+
+  img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    margin-bottom: 100vh;
+    font-size: 125%;
+  }
+
+  .menu li {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 80%;
+    height: 80vh;
+    background-color: #222;
+    border: medium solid #000;
+  }
+
+  .item {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #666;
+    border: medium solid #999;
+  }
+
+  .grid-explicit{
+      display: grid;
+      /* grid de 3 col*3 row*/
+      grid-template-rows: 2rem 20vh 30%;
+      grid-template-columns: 50% 100px 1fr;
+/* grid de 5 col *4 row*/
+      grid-template-columns: repeat(5,20%);
+      /*grid-template-columns: repeat(5,1fr);*/
+      grid-template-rows: repeat(4,auto);
+
+      /* grid de 4 col *5 row*/
+      /*grid-template-columns: 20% 30% 30% 20%;*/
+      grid-template-columns: 20% repeat(2,30%) 20%;
+      grid-template-rows: repeat(5,auto);
+
+      /* gap, sirve para dar una separacion a los item en lso cuadros. el primer
+      parametro es para separar las fials y el segundo para las columnas*/
+      gap:10px 0%;
+
+  }
+
+  .grid-explicit .item:nth-child(10){/* lo posicionamos segun las lineas
+    y los demas elementos le seguirian a continuacion*/
+
+    /* se puede hacer que ocupe mas de un cuadrado*/
+    color: crimson;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    /* ahora con abreviatura*/
+    grid-row: 2/3;
+    grid-column: 3/5;
+
+    /* atajo del atajo*/
+    /*grid-area: 2/5 / 2/4;*/
+  }
+
+  .grid-explicit .item:nth-child(12){
+    color: darkgoldenrod;
+    grid-row: span 2;
+    grid-column: span 3;
+  }
+
+  .grid-explicit .item:nth-child(15){
+    color: darkorchid;
+    grid-row:1 / span 2;/* que empieze en la linea 1 y se desplace 3 posiciones hacia abajo*/
+    grid-column: 1 / span 2;
+  }
+
+  .grid-line-names{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+
+    /* nombrando a las lineas de las columnas*/
+    grid-template-columns:[lineas-c1] 1fr [lineas-c2] 1fr [lineas-c3] 1fr [lineas-c4] ;
+    grid-template-rows: [lineas-r1] 1fr [lineas-r2] 1fr [lineas-r3] 1fr [lineas-r4];
+  }
+
+  .grid-line-names .item:nth-child(3){
+    color: cyan;
+    grid-row: lineas-r3/lineas-r4;
+    grid-column: lineas-c1/lineas-c4;
+  }

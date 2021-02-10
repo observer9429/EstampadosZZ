@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *,
+        *::after,
+        *::before{
+            box-sizing: border-box;/* con todo lo anterior ahora la caja y los bordes
+            ocupan el 20% y logran caber 5 cajas en una fila*/
+
+            /*con el border-box hacemos que el tamaño se cuente con los bordes padding y contenido
+            y no solo el   contenido como lo hace el content-box*/
+        }
+
+
+        .container{
+            background-color: #333;
+            height: 30vh;
+
+
+
+
+
+
+
+            /*poniendo solo flex, sus elementos actuaran inline
+            y con inline flex hace que tambien la misma caja y sus elementos actuen inline ->inline-flex */
+            display: flex;
+            /*flex-direction: row-reverse; por defecto tiene el valor row*/
+            flex-direction: column;/* por defecto se pone abajo, pero se edita con flex direction*/
+            flex-wrap: wrap ;/* por defecto viene nowrap intenta alinear todos los elementos en una sola*/
+
+            flex-flow: row nowrap;/*es un atajo ponemos column y wrap en una sola linea */
+
+            justify-content: flex-start;
+            /*jus-con define la alineacion de los elementos hijos, respecto al eje principal */
+            
+            /* space bettween,space around, space evenly es el mismo tamaño que tiene
+            en las orilla sera lamisma que tienen en los espacios internos*/
+
+            align-items: baseline;
+        }
+
+        .item{
+            border: medium solid #999;
+           /* width: 20%;/*toma de referencia toda la pantalla*/
+           /* height: 20%;/*toma de referencia al contenedor que lo tiene el flex-directionm como es en columna
+            con flex wrap*/
+            background-color: #666;
+        }
+
+        .item:nth-child(2){
+            font-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    
+    <section class="container">
+        <article class="item">Flex Item 1</article>
+        <article class="item">Flex Item 2</article>
+        <article class="item">Flex Item 3</article>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="container">
+        <article class="item">Flex Item 1</article>
+        <article class="item">Flex Item 2</article>
+        <article class="item">Flex Item 3</article>
+    </section>
+    <br>
+    <br>
+    <section class="container">
+        <article class="item">item 1</article>
+        <article class="item">item 2</article>
+        <article class="item">item 3</article>
+        <article class="item">item 4</article>
+        <article class="item">item 5</article>
+        <article class="item">item 6</article>
+        <article class="item">item 7</article>
+        <article class="item">item 8</article>
+        <article class="item">item 9</article>
+        <article class="item">item 10</article>
+        <article class="item">item 11</article>
+        <article class="item">item 12</article>
+        <article class="item">item 13</article>
+        <article class="item">item 14</article>
+        <article class="item">item 15</article>
+        <article class="item">item 16</article>
+        <article class="item">item 17</article>
+        <article class="item">item 18</article>
+        <article class="item">item 19</article>
+    </section>
+</body>
+</html>
